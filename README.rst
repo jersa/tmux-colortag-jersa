@@ -29,6 +29,7 @@ Features
 - Automically color the window tabs by their name hash
 - Manual control of coloring in tmux (also saved)
 - Support Powerline symbols
+- Set a random tab color
 
 TLDR; I just want it
 ====================
@@ -56,6 +57,7 @@ Installation
 - Optional:
 
   - To immediately play with the main feature, try ``prefix`` (``Ctrl+b`` by default) + ``,`` and change the window name.
+  - Set a random color for the current window with ``prefix`` + ``k``.
   - NOTE: tmux won't change the window name automatically once you set it manually. To test the auto-changing color, just run any command in your new window.
 
 Help
@@ -89,6 +91,7 @@ Customization
     # TMUX_COLORTAG_ROUNDED_POWERLINE=yes
 
 - To change the prompt key (``prefix`` + ``C``), specify your key in ``TMUX_COLORTAG_KEY``.
+- The random color key (``prefix`` + ``k``), can be changed by specifying a key in ``TMUX_COLORTAG_KEY_RANDOM``.
 
 - TIP: If you love the status bar on the top (instead of at the bottom by default in tmux), add ``set-option -g status-position top`` to your config file
 

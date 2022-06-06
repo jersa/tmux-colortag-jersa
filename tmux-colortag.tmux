@@ -6,6 +6,7 @@ TMUX_COLORTAG_TAG_ONLY="${TMUX_COLORTAG_TAG_ONLY:-no}"
 TMUX_COLORTAG_USE_POWERLINE="${TMUX_COLORTAG_USE_POWERLINE:-no}"
 TMUX_COLORTAG_ROUNDED_POWERLINE="${TMUX_COLORTAG_ROUNDED_POWERLINE:-no}"
 TMUX_COLORTAG_KEY="${TMUX_COLORTAG_KEY:-C}"
+TMUX_COLORTAG_RANDOM_KEY="${TMUX_COLORTAG_RANDOM_KEY:-k}"
 TMUX_COLORTAG_TAG_BOLD="${TMUX_COLORTAG_TAG_BOLD:-no}"
 TMUX_COLORTAG_TAG_FOCUS_UNDERLINE="${TMUX_COLORTAG_TAG_FOCUS_UNDERLINE:-yes}"
 
@@ -122,7 +123,4 @@ else
 fi
 
 tmux bind-key "$TMUX_COLORTAG_KEY" run-shell "'$CURRENT_DIR/tmux-colortag-prompt.sh' prompt"
-
-if [[ `command -v shuf 2>&1` ]]; then
-    tmux bind-key "$TMUX_COLORTAG_RANDOM_KEY" run-shell "'$CURRENT_DIR/tmux-colortag-prompt.sh' random"
-fi
+tmux bind-key "$TMUX_COLORTAG_RANDOM_KEY" run-shell "'$CURRENT_DIR/tmux-colortag-prompt.sh' random"

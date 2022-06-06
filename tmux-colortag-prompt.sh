@@ -38,7 +38,7 @@ case "$1" in
         tmux new-window -n '[colors]' "$CURRENT_DIR/termcolor_256.sh"
         ;;
     random)
-        tmux run-shell "idx=#I name=#W session=#S $CURRENT_DIR/tmux-colortag-prompt.sh color-idx '$(shuf -n 1 -i 0-255)'"
+        tmux run-shell "idx=#I name=#W session=#S $CURRENT_DIR/tmux-colortag-prompt.sh color-idx '$(($RANDOM % 256 + 1))'"
         ;;
     '') ;;
     help)
@@ -52,6 +52,7 @@ case "$1" in
         echo "clear-name: clears the preivous color of the name"
         echo "clear-all: use auto-coloring for all window tags"
         echo "manual-colors: show all memorized coloring for this session"
+        echo "random: change the current window tab to a random color"
         ;;
     *) tmux display "ColorTag: invalid command"; exit 0;;
 esac
