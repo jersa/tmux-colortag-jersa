@@ -5,6 +5,8 @@ run_python() {
     if [[ "$err" != "" ]]; then
         tmux display "$err"
     fi
+
+    #echo "$CURRENT_DIR/name2color.py" "$session" "$idx" "$name" "$@"
 }
 
 run_python_long() {
@@ -36,6 +38,12 @@ case "$1" in
         ;;
     colors)
         tmux new-window -n '[colors]' "$CURRENT_DIR/termcolor_256.sh"
+        ;;
+    random)
+        #tmux display "--color-idx 99" "$2"
+        #tmux display "--color-idx hey `shuf -n 1 -i 0-255` $session 1 $@"
+        tmux run-shell "idx=#I name=#W session=#S $CURRENT_DIR/tmux-colortag-prompt.sh color-idx '$(shuf -n 1 -i 0-255)'"
+        #run_python --color-idx $(shuf -n 1 -i 0-255) "$2"
         ;;
     '') ;;
     help)
