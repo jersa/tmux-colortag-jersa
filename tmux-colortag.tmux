@@ -125,5 +125,4 @@ tmux bind-key "$TMUX_COLORTAG_KEY" run-shell "'$CURRENT_DIR/tmux-colortag-prompt
 
 if [[ `command -v shuf 2>&1` ]]; then
     tmux bind-key "$TMUX_COLORTAG_RANDOM_KEY" run-shell "'$CURRENT_DIR/tmux-colortag-prompt.sh' random"
-    #tmux bind-key "$TMUX_COLORTAG_RANDOM_KEY" run-shell "$CURRENT_DIR/name2color.py --color-idx `shuf -n 1 -i 0-255` #S #{window_index} ''"
 fi
