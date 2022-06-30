@@ -1,6 +1,13 @@
 Tmux ColorTag Plugin/Theme
 --------------------------
 
+**Note on addition by jersa:**
+
+A random color can be set for a tab using ``prefix`` + ``k``.
+
+Screenshots
+===========
+
 .. raw:: html
 
     <div align="center">
